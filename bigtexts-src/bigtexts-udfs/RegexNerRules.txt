@@ -1,0 +1,5 @@
+acetaminofen	MEDICAMENTO
+ibuprofeno	MEDICAMENTO
+Sinutab	MEDICAMENTO
+Noxpirin	MEDICAMENTO
+viagra	MEDICAMENTO

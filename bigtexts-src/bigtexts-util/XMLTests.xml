@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preprocessingTask>
+    <name>SnowballStemmer-EN</name>
+    <requiredJars>
+        <requiredJar>libstemmer-1.0.jar</requiredJar>
+        <requiredJar>bigtexts-udfs-1.0.jar</requiredJar>
+    </requiredJars>
+    <commands>
+        <command>co.edu.javeriana.bigtextsudfs.SNOWBALL_STEMMER_EN((chararray)$0)</command>
+    </commands>
+</preprocessingTask>
+        

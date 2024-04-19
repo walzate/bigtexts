@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pipeline>
+    <files>
+        <files>regexNerExample.txt</files>
+    </files>
+    <preprocessingTasks>
+        <preprocessingTasks>
+            <name>RegexNamedEntityRecognition</name>
+            <requiredJars>
+                <requiredJar>stanford-corenlp-3.4.1.jar</requiredJar>
+                <requiredJar>jollyday-0.4.7.jar</requiredJar>
+                <requiredJar>bigtexts-udfs-1.0.jar</requiredJar>
+            </requiredJars>
+	    <implementationClass>co.edu.javeriana.bigtextsudfs.REGEXNER</implementationClass>
+            <commands>
+                <command>co.edu.javeriana.bigtextsudfs.REGEXNER((chararray)$0)</command>
+            </commands>
+            <parameters>                
+                <parameter>
+                    <defaultValue>acetaminofen=MEDICAMENTO,ibuprofeno=MEDICAMENTO</defaultValue>
+                    <description>comma separated rules i.e. acetaminofen=MEDICAMENTO,ibuprofeno=MEDICAMENTO</description>
+                    <label>regexner.rules</label>
+                    <name>regexner.rules</name>
+                    <type>String</type>
+                    <value>Sinutab=MEDICAMENTO,noraver=MEDICAMENTO</value>
+                </parameter>
+            </parameters>
+        </preprocessingTasks>
+    </preprocessingTasks>
+    <targetFolder>2014-10-23-16-00-55</targetFolder>
+    <deliveryMethod>FTP</deliveryMethod>    
+</pipeline>

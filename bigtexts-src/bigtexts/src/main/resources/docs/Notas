@@ -1,0 +1,24 @@
+Pig en maven
+
+Para que funcionara pig en maven se adiciona el repositorio
+
+<repositories>
+        <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+luego se adiciona la dependencia
+
+<dependency>
+            <groupId>org.apache.pig</groupId>
+            <artifactId>pig</artifactId>
+            <version>0.13.0</version>
+</dependency>
+
+Pero dicho jar está compilado para hadoop 1.x y no para hadoop 2.x, para lo cual lo que hacemos es que
+tomamos del directorio de instalación de pig $PIG_INSTALL el jar pig-0.13.0-withouthadoop-h2.jar
+que es el que si está compilado para hadoop 2.x y reemplazamos el que está en 
+/home/hduser/.m2/repository/org/apache/pig/pig/0.13.0/, con esto ya no se generan errores de incompatibilidad
+entre las librerías de hadoop-client y pig
