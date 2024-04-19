@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>BigTexts</title>
+  <meta name="description" content="Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta name="keywords" content="BigTexts, Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><img src="images/bigTexts.png" width="60px"><a href="index.html"><span class="logo_colour">BigTexts</span></a></h1>		  
+		  <h2>PA141-06-PreprosMinText</h2>
+        </div>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="problematica.html">Problemática</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+		  <li><a href="arquitectura.html">Arquitectura</a></li>
+          <li class="selected"><a href="aplicativo.html">Aplicativo</a></li>
+		  <li><a href="entregables.html">Entregables</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="gallery">
+        <ul class="images">
+          <li class="show"><img width="950" height="300" src="images/1.png" alt="photo_one" /></li>
+          <li><img width="950" height="300" src="images/2.png" alt="photo_two" /></li>
+          <li><img width="950" height="300" src="images/3.png" alt="photo_three" /></li>
+        </ul>
+      </div>
+      <div id="sidebar_container">        
+        <div class="sidebar">
+          <h3>Contenido</h3>
+          <ul>
+            <li><a href="#Aplicativo">Aplicativo</a></li>            
+          </ul>
+        </div>
+      </div>
+      <div class="content">        
+		<h1><a name="Aplicativo">Aplicativo</a></h1>
+		<p>La interfaz gráfica del cliente se divide en 4 pantallas. Una pantalla de bienvenida y  3 pasos para la creación y configuración del pipeline que se desea ejecutar, así:</p>
+		<p><h2>Home:</h2>Es la pantalla en la cual se le da la bienvenida al usuario y se presentan los datos generales del proyecto.</p>
+		<img src="images/01-BigTexts.jpg" width="600px"/>		
+		
+		<p><h2>Paso 1: Cargar documentos:</h2>Pantalla en la que el usuario carga los documentos que desea pre-procesar y los envía al directorio FTP que consulta el servidor de BigTexts.</p>
+		<img src="images/02-BigTexts.jpg" width="600px"/>
+		
+		<p><h2>Paso 2: Seleccionar y configurar tareas de pre-procesamiento:</h2>Pantalla en la que el usuario selecciona y parametriza las tareas de pre-procesamiento que desea aplicarle a los archivos seleccionados en la pantalla anterior.</p>
+		<img src="images/03-BigTexts.jpg" width="600px"/>
+		
+		<p><h2>Paso 3: Seleccionar Destino:</h2>Pantalla que muestra el resúmen del pipeline creado en los pasos anteriores y permite seleccionar el destino (HDFS o FTP) en el cual se desea la entrega del resultado del proceso.</p>
+		<img src="images/04-BigTexts.jpg" width="600px"/>			
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy; Wilson Alzate Calderón | <a href="http://www.javeriana.edu.co/">Pontificia Universidad Javeriana</a></p>
+    </footer>
+  </div>
+  <p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>

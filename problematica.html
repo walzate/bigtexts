@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>BigTexts</title>
+  <meta name="description" content="Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta name="keywords" content="BigTexts, Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><img src="images/bigTexts.png" width="60px"><a href="index.html"><span class="logo_colour">BigTexts</span></a></h1>		  
+		  <h2>PA141-06-PreprosMinText</h2>
+        </div>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="selected"><a href="problematica.html">Problemática</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+		  <li><a href="arquitectura.html">Arquitectura</a></li>
+          <li><a href="aplicativo.html">Aplicativo</a></li>
+		  <li><a href="entregables.html">Entregables</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="gallery">
+        <ul class="images">
+          <li class="show"><img width="950" height="300" src="images/1.png" alt="photo_one" /></li>
+          <li><img width="950" height="300" src="images/2.png" alt="photo_two" /></li>
+          <li><img width="950" height="300" src="images/3.png" alt="photo_three" /></li>
+        </ul>
+      </div>
+      <div id="sidebar_container">        
+        <div class="sidebar">
+          <h3>Contenido</h3>
+          <ul>
+            <li><a href="#Problem">Problemática</a></li>            
+          </ul>
+        </div>
+      </div>
+      <div class="content">        
+		<h1><a name="Problem">Problemática</a></h1>
+		<p>Actualmente se están generando grandes cantidades de datos en el mundo. Sensores en automóviles, trenes, aviones, turbinas de energía eólica, transformadores de energía eléctrica, entre otros, generan grandes cantidades de datos que son difíciles de analizar y procesar. El dominio de la salud no es ajeno a esta problemática, pues los exámenes médicos que se practican (tomografías, radiografías, electro cardiogramas, etc.) son fuentes ricas de datos, que para ser analizados en detalle, requieren técnicas complejas de computación y gran poder de procesamiento. En dicho dominio, más específicamente en la gestión de Historias Clínicas Electrónicas (EHR por sus siglas en inglés), también se tiene una fuente vasta de datos, ya que la atención de un paciente puede llegar a generar cientos de registros en un sólo día. Para el análisis de una sola historia clínica, bastaría con imprimirla y que un médico la analizara, pero si esto se extrapola a cientos, miles o millones de registros clínicos, los análisis de tendencias plantean un problema de grandes magnitudes, el cual se puede catalogar como un problema de Big Data, pues maneja las tres características fundamentales de dicho paradigma:</p>
+
+		<ul>
+		<li>Volumen: Grandes cantidades de información contenida en las historias clínicas electrónicas</li>
+		<li>Variedad: Datos estructurados y no estructurados</li>
+		<li>Velocidad: Visto desde la perspectiva de la necesidad de contar con grandes velocidades de procesamiento.</li>
+		</ul>
+
+		<p>El campo de observaciones de las historias clínicas electrónicas son una fuente bastante rica de información y para su tratamiento las técnicas más adecuadas son las de minería de texto. Una de las fases más pesadas en un proceso de minería de texto es la fase de pre-procesamiento y es allí en donde se encuentra una gran oportunidad de afinamiento mediante el uso de tecnologías asociadas al paradigma Big Data. En el presente trabajo de grado se expone BigTexts, un framework para pre-procesamiento de datos en minería de texto soportado en tecnologías de Big Data</p>        	
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy; Wilson Alzate Calderón | <a href="http://www.javeriana.edu.co/">Pontificia Universidad Javeriana</a></p>
+    </footer>
+  </div>
+  <p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>

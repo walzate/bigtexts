@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>BigTexts</title>
+  <meta name="description" content="Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta name="keywords" content="BigTexts, Framework de pre-procesamiento de datos en minería de texto basado en tecnologías de big data" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  <link rel="icon" type="image/png" href="favicon.ico" />
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><img src="images/bigTexts.png" width="60px"><a href="index.html"><span class="logo_colour">BigTexts</span></a></h1>		  
+		  <h2>PA141-06-PreprosMinText</h2>
+        </div>
+      </div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="problematica.html">Problemática</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+		  <li class="selected"><a href="arquitectura.html">Arquitectura</a></li>
+          <li><a href="aplicativo.html">Aplicativo</a></li>
+		  <li><a href="entregables.html">Entregables</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div class="gallery">
+        <ul class="images">
+          <li class="show"><img width="950" height="300" src="images/1.png" alt="photo_one" /></li>
+          <li><img width="950" height="300" src="images/2.png" alt="photo_two" /></li>
+          <li><img width="950" height="300" src="images/3.png" alt="photo_three" /></li>
+        </ul>
+      </div>
+      <div id="sidebar_container">        
+        <div class="sidebar">
+          <h3>Contenido</h3>
+          <ul>
+            <li><a href="#Arquitectura">Arquitectura</a></li>            
+          </ul>
+        </div>
+      </div>
+      <div class="content">        
+		<h1><a name="Arquitectura">Arquitectura</a></h1>
+		<p>En términos generales, como se muestra en la Figura 1, BigTexts está compuesto por dos artefactos, un cliente (Cliente BigTexts) y un servidor (BigTexts).</p> 
+		<p>El cliente ofrece una interfaz gráfica por medio de la cual el usuario puede seleccionar los archivos a procesar, las tareas de pre-procesamiento a ejecutar (con sus respectivas parametrizaciones) y la forma de entrega. Dicha aplicación cliente también puede ser usada por una aplicación externa como librería. El cliente se encarga de enviarle los archivos al servidor mediante un FTP y los llamados para las ejecuciones se realizan de manera asíncrona, enviando mensajes en formato XML a un servidor de colas. </p>
+				
+		<p>El servidor BigTexts se conecta al servidor de colas y obtiene el mensaje encolado, transformándolo de XML a objetos. Posteriormente el mensaje convertido en objetos es ejecutado en el clúster Hadoop mediante la construcción de un script de Apache Pig que usa UDFs<sup><a href="#fn1" id="ref1">1</a></sup> con las tareas de pre-procesamiento. El clúster Hadoop está compuesto por una máquina principal (el master), la cual se encarga de gestionar tanto el almacenamiento como el processamiento en paralelo, y una serie de máquinas secundarias (slaves) que son las que almacenan los bloques de datos y los procesan de manera paralela. Finalmente se entrega un conjunto de documentos pre-procesados en el HDFS o en el directorio FTP, según lo haya seleccionado el usuario. </p>	
+
+		<figure>
+		<img src="images/ArquitecturaBigTexts.png" width="600px"/>
+		<figcaption>Figura 1. - BigTexts</figcaption>
+		</figure>
+		
+		<p><br/>Como se muestra en la Figura 2, en la situación actual se cuenta con un conjunto de documentos, a los cuales le es aplicada una serie de tareas de pre-procesamiento de manera secuencial, para obtener una colección de documentos pre-procesados. La situación deseada, apoyada por BigTexts, toma los documentos iniciales, los particiona en el cluster Hadoop mediante HDFS, y usando MapReduce, ejecuta las tareas de pre-procesamiento en paralelo, llegando finalmente a la colección de documentos pre-procesados.</p>
+		
+		<figure>
+		<img src="images/SituacionDeseadaVsSituacionActual.png" width="600px"/>
+		<figcaption>Figura 2. - Situación actual vs situación deseada</figcaption>
+		</figure>		
+		<br/>
+		<sup id="fn1">1. User Defined Functions, La forma en que Apache Pig permite la creación de funciones personalizadas en Java.</sup>			
+      </div>
+    </div>
+    <footer>
+      <p>Copyright &copy; Wilson Alzate Calderón | <a href="http://www.javeriana.edu.co/">Pontificia Universidad Javeriana</a></p>
+    </footer>
+  </div>
+  <p>&nbsp;</p>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>
